@@ -20,7 +20,7 @@ Como o problema tem apenas 2 classes ("0" e "1"), um ÚNICO perceptron
 separáveis, então o Teorema da Convergência garante erro zero no treino.
 """
 
-from config import MAX_EPOCAS
+from config import LINHAS, COLUNAS, N_ENTRADAS, MAX_EPOCAS
 from dados import conjunto_treino, conjunto_teste
 from perceptron import treinar, avaliar
 from visualizacao import desenhar, visualizar_pesos
@@ -30,14 +30,15 @@ def main():
     print("=" * 60)
     print(" RNA PERCEPTRON  —  dígitos cursivos '0' e '1'")
     print("=" * 60)
-    print("Entrada: grade 7x5 (35 pixels). Saída 0/1 = dígito reconhecido.\n")
+    print(f"Entrada: grade {LINHAS}x{COLUNAS} ({N_ENTRADAS} pixels). "
+          "Saída 0/1 = dígito reconhecido.\n")
 
     treino = conjunto_treino()
     teste = conjunto_teste()
 
     # --- Exemplos de treino ---
     print("-" * 60)
-    print("CONJUNTO DE TREINO (3 exemplos de cada dígito):")
+    print("CONJUNTO DE TREINO (2 exemplos de cada dígito):")
     print("-" * 60)
     for x, alvo, nome in treino:
         print(f"\n  {nome}  (rótulo = {alvo}):")
@@ -55,7 +56,7 @@ def main():
 
     # --- Pesos aprendidos ---
     print("\n" + "-" * 60)
-    print("PESOS APRENDIDOS (remodelados em 7x5):")
+    print(f"PESOS APRENDIDOS (remodelados em {LINHAS}x{COLUNAS}):")
     print("-" * 60)
     visualizar_pesos(pesos, bias)
 

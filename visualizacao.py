@@ -13,7 +13,7 @@ def desenhar(vetor):
 
 
 def visualizar_pesos(pesos, bias):
-    """Mostra o 'mapa' dos pesos remodelado em 7x5.
+    """Mostra o 'mapa' dos pesos remodelado na grade LINHAS x COLUNAS.
 
     '#' peso forte positivo (puxa p/ "1")  ·  '+' positivo fraco
     '=' peso forte negativo (puxa p/ "0")  ·  '-' negativo fraco  ·  ' ' ~zero
